@@ -132,7 +132,7 @@ export interface WrapEdgeProps<T = any> {
   onMouseLeave?: (event: React.MouseEvent, edge: Edge) => void;
   edgeUpdaterRadius?: number;
   onEdgeUpdateStart?: (event: React.MouseEvent, edge: Edge) => void;
-  onEdgeUpdateEnd?: (event: MouseEvent, edge: Edge) => void;
+  onEdgeUpdateEnd?: (event: MouseEvent, edge: Edge, endType: string) => void;
 }
 
 export interface EdgeProps<T = any> {
@@ -305,15 +305,15 @@ export type ConnectionLineComponentProps = {
 
 export type ConnectionLineComponent = React.ComponentType<ConnectionLineComponentProps>;
 
-export type OnConnectFunc = (connection: Connection) => void;
+export type OnConnectFunc = (connection: Connection, event?: MouseEvent) => void;
 export type OnConnectStartParams = {
   nodeId: ElementId | null;
   handleId: ElementId | null;
   handleType: HandleType | null;
 };
 export type OnConnectStartFunc = (event: ReactMouseEvent, params: OnConnectStartParams) => void;
-export type OnConnectStopFunc = (event: MouseEvent) => void;
-export type OnConnectEndFunc = (event: MouseEvent) => void;
+export type OnConnectStopFunc = (event: MouseEvent, params: Connection) => void;
+export type OnConnectEndFunc = (event: MouseEvent, params: Connection) => void;
 
 export type SetConnectionId = {
   connectionNodeId: ElementId | null;
