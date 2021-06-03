@@ -171,13 +171,13 @@ export function onMouseDown(
       doc
     );
 
-    onConnectStop?.(event);
+    onConnectStop?.(event, connection);
 
     if (isValid) {
       onConnect?.(connection);
     }
 
-    onConnectEnd?.(event);
+    onConnectEnd?.(event, connection);
 
     if (elementEdgeUpdaterType && onEdgeUpdateEnd) {
       onEdgeUpdateEnd(event);
