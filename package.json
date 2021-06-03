@@ -1,5 +1,5 @@
 {
-  "name": "react-flow-renderer",
+  "name": "@obaidahmed/flow",
   "version": "9.6.0",
   "main": "dist/ReactFlow.js",
   "module": "dist/ReactFlow.esm.js",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wbkd/react-flow.git"
+    "url": "https://github.com/obaid/react-flow.git"
   },
   "scripts": {
     "build": "rollup -c --environment NODE_ENV:production && postcss src/*.css --dir dist",
