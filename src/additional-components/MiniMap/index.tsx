@@ -98,7 +98,7 @@ const MiniMap = ({
         d={`M${x - offset},${y - offset}h${width + offset * 2}v${height + offset * 2}h${-width - offset * 2}z
         M${viewBB.x},${viewBB.y}h${viewBB.width}v${viewBB.height}h${-viewBB.width}z`}
         fill={maskColor}
-        // fillRule="evenodd"
+        fillRule="evenodd"
       />
 
     </svg>
