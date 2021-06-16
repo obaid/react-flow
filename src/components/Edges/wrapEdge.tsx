@@ -2,7 +2,7 @@ import React, { memo, ComponentType, useCallback, useState, useMemo } from 'reac
 import cc from 'classcat';
 
 import { useStoreActions, useStoreState } from '../../store/hooks';
-import { Edge, EdgeProps, WrapEdgeProps } from '../../types';
+import { Edge, EdgeProps, WrapEdgeProps, Connection } from '../../types';
 import { onMouseDown } from '../../components/Handle/handler';
 import { EdgeAnchor } from './EdgeAnchor';
 
@@ -143,7 +143,7 @@ export default (EdgeComponent: ComponentType<EdgeProps>) => {
         onEdgeUpdateStart?.(event, edgeElement);
 
         const _onEdgeUpdate = onEdgeUpdateEnd
-          ? (evt: MouseEvent): void => onEdgeUpdateEnd(evt, edgeElement, isSourceHandle ? 'source' : 'target')
+          ? (evt: MouseEvent, newConnection: Connection): void => onEdgeUpdateEnd(evt, edgeElement, newConnection, isSourceHandle ? 'source' : 'target')
           : undefined;
 
         onMouseDown(

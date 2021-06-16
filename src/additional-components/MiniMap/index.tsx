@@ -92,13 +92,15 @@ const MiniMap = ({
             shapeRendering={shapeRendering}
           />
         ))}
+      <rect x={viewBB.x} y={viewBB.y} width={viewBB.width} height={viewBB.height} stroke="black" fill='rgb(255, 255, 255, 0)'/>
       <path
         className="react-flow__minimap-mask"
         d={`M${x - offset},${y - offset}h${width + offset * 2}v${height + offset * 2}h${-width - offset * 2}z
         M${viewBB.x},${viewBB.y}h${viewBB.width}v${viewBB.height}h${-viewBB.width}z`}
         fill={maskColor}
-        fillRule="evenodd"
+        // fillRule="evenodd"
       />
+
     </svg>
   );
 };

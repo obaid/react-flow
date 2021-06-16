@@ -98,7 +98,7 @@ export function onMouseDown(
   isValidConnection: ValidConnectionFunc,
   connectionMode: ConnectionMode,
   elementEdgeUpdaterType?: HandleType,
-  onEdgeUpdateEnd?: (evt: MouseEvent) => void,
+  onEdgeUpdateEnd?: (evt: MouseEvent, connection: Connection) => void,
   onConnectStart?: OnConnectStartFunc,
   onConnectStop?: OnConnectStopFunc,
   onConnectEnd?: OnConnectEndFunc
@@ -180,7 +180,7 @@ export function onMouseDown(
     onConnectEnd?.(event, connection);
 
     if (elementEdgeUpdaterType && onEdgeUpdateEnd) {
-      onEdgeUpdateEnd(event);
+      onEdgeUpdateEnd(event, connection);
     }
 
     resetRecentHandle(recentHoveredHandle);
